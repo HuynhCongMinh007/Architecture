@@ -1,0 +1,7 @@
+.original{
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    align-items: center;
+    padding: 10px 20px;
+}

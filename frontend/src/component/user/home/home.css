@@ -1,0 +1,23 @@
+/* App-user.css */
+
+.cloudinary-image-container {
+    text-align: center;
+   position: relative;
+  }
+  
+  .cloudinary-image {
+    width: 100%; /* Kích thước ảnh */
+    height: auto; /* Tự động thay đổi theo tỷ lệ */
+  
+  }
+  .project-title{
+    position: absolute;
+    top:1%;
+    right: 1%;
+    z-index: 2000;
+    color: white;
+  }
+  .project-title:hover{
+    color:red;
+    cursor: pointer;
+  }
