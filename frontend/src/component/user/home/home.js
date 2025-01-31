@@ -1,18 +1,27 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./home.css";
+import useBackgroundRotation from "./userBackgroundRotation";
 
 function Home() {
-  return (
-    <div>
-    
-      <div className="cloudinary-image-container">
-        <img
-          src="https://res.cloudinary.com/dasqsts9r/image/upload/v1738058071/rs_w_1280_h_854_xitmqo.webp"
-          alt="Cloudinary Example"
-          className="cloudinary-image"
-        />
-        <div className="project-title">Project</div>
-      </div>
+  const { backgroundImage, opacity } = useBackgroundRotation();
 
+  return (
+    <div
+      className="cloudinary-image-container"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100vw",
+        height: "100vh",
+        opacity: opacity,
+        transition: "opacity 1s ease-in-out", // Thêm transition để làm mượt mà hiệu ứng opacity
+      }}
+    >
+      <Link to="/projects" className="project-title">
+        <div className="project-title">Project</div>
+      </Link>
     </div>
   );
 }

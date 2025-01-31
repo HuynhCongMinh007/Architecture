@@ -10,15 +10,12 @@ function App() {
   return (
     <Router>
       <div>
-        {/* Header luôn hiển thị */}
         <Header />
-
-        {/* Nội dung chính thay đổi khi chuyển route */}
+        
         <main>
           <AppRoutes />
         </main>
 
-        {/* Footer luôn hiển thị */}
         <Footer />
       </div>
     </Router>
