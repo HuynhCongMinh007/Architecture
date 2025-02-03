@@ -1,0 +1,35 @@
+# Thư mục node_modules (các package cài bằng npm)
+node_modules/
+
+# File môi trường (chứa thông tin nhạy cảm như API key, DB credentials)
+.env
+
+# Thư mục log và file log
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Thư mục cache của npm và yarn
+.npm/
+.yarn/
+
+# Thư mục build hoặc dist nếu có
+dist/
+build/
+
+# Thư mục chứa database SQLite (nếu dùng)
+*.sqlite
+*.sqlite3
+
+# Thư mục chứa file tạm của hệ điều hành
+.DS_Store
+Thumbs.db
+
+# Thư mục chứa coverage khi chạy test
+coverage/
+
+# Tệp lock nếu dùng npm hoặc yarn
+package-lock.json
+yarn.lock
