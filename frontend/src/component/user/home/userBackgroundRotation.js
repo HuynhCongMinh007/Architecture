@@ -9,12 +9,11 @@ function useBackgroundRotation() {
     // Lấy danh sách ảnh từ API
     const fetchImages = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/home");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/home`);
         if (!response.ok) {
           throw new Error("Không thể lấy dữ liệu");
         }
         const data = await response.json();
-        console.log(data);
         setImages(data); // Giả sử dữ liệu trả về là một mảng các URL ảnh
         setBackgroundImage(data[0].url); // Set ảnh đầu tiên làm ảnh nền ban đầu
       } catch (error) {
