@@ -6,7 +6,8 @@ import './header.css';
 const Header = () => {
   return (
     <header>
-     <Link to='/' className='text-decoration-none text-center original text-dark'>ORIGINAL</Link>
+     
+     <Link to='/' className='text-decoration-none text-center original text-dark'><h1>ORIGINAL</h1></Link>
     </header>
   );
 }
