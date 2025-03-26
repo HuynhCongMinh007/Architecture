@@ -1,32 +1,47 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function useBackgroundRotation() {
-  const images = useMemo(() => [
-    "https://res.cloudinary.com/dasqsts9r/image/upload/v1738058071/rs_w_1280_h_854_xitmqo.webp",
-    "https://res.cloudinary.com/dasqsts9r/image/upload/v1738077970/uzfho1fszbsmym1vbgyu.jpg",
-    "https://res.cloudinary.com/dasqsts9r/image/upload/v1738077970/azqo7gqtzganz5ks7tcy.jpg",
-    "https://res.cloudinary.com/dasqsts9r/image/upload/v1738077970/oywawqucufwdk68luqet.jpg",
-  ], []);
-
-  const [backgroundImage, setBackgroundImage] = useState(images[0]);
-  const [opacity, setOpacity] = useState(1); // Trạng thái opacity để tạo hiệu ứng mờ dần
+  const { id } = useParams(); // Lấy id từ URL
+  console.log("id project:", id);
+  
+  const [images, setImages] = useState([]);
+  const [backgroundImage, setBackgroundImage] = useState(null);
+  const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
+    if (!id) return; // Đảm bảo có id trước khi gọi API
+
+    fetch(`${process.env.REACT_APP_API_URL}/api/projects/img/${id}`) // Gọi API lấy danh sách ảnh dựa trên id
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("data img poster:", data);
+        if (Array.isArray(data) && data.length > 0) {
+          setImages(data);
+          setBackgroundImage(data[0]); // Ảnh đầu tiên
+        }
+      })
+      .catch((error) => console.error("Error fetching images:", error));
+  }, [id]);
+
+  useEffect(() => {
+    if (images.length === 0) return;
+
     const interval = setInterval(() => {
-      // Mờ dần ảnh trước khi đổi
-      setOpacity(0); // Làm mờ
+      setOpacity(0);
+
       setTimeout(() => {
         setBackgroundImage((prevImage) => {
           const currentIndex = images.indexOf(prevImage);
-          return images[(currentIndex + 1) % images.length];
+          const nextIndex = (currentIndex + 1) % images.length;
+          return images[nextIndex];
         });
-      },900); // Sau 500ms thì thay đổi ảnh
+      }, 900);
 
-      // Sau khi đổi ảnh, làm sáng lại
       setTimeout(() => {
-        setOpacity(1); // Làm sáng ảnh
-      }, 900); // Sau 1s thì làm sáng lại ảnh
-    }, 4000); // Đổi ảnh sau mỗi 3 giây
+        setOpacity(1);
+      }, 900);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [images]);

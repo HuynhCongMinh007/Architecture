@@ -48,7 +48,7 @@ const ProjectsPage = () => {
         {projects.map((project) => (
           <div key={project.id} className="col-12 col-sm-6 col-md-4 mb-4">
             <div className="card">
-              <Link to={`/detail`}>
+              <Link to={`/detail/${project.id}`}>
                 <img
                   src={project.image_poster}
                   alt={project.name}
