@@ -1,4 +1,4 @@
-const { getProject } = require("../models/project.models");
+const { getProject } = require("../../models/model_user/project.models");
 
 const projects = {
   // Lấy danh sách sản phẩm

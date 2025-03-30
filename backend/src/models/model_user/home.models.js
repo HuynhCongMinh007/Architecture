@@ -1,5 +1,5 @@
 // src/models/productModel.js
-const pool = require('../config/db'); // Kết nối DB
+const pool = require('../../config/db'); // Kết nối DB
 
 const getHome = async () => {
     try {

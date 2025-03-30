@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const projects = require('../controllers/projects.controller'); // Import controller
-const detail = require('../controllers/detailProject.controller'); // Import controller
+const projects = require('../../controllers/controllers_user/projects.controller'); // Import controller
+const detail = require('../../controllers/controllers_user/detailProject.controller'); // Import controller
 
 // Định nghĩa routes và gọi controller
 router.get('/', projects.getProjects);

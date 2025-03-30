@@ -1,4 +1,4 @@
-const { getHome } = require("../models/home.models");
+const { getHome } = require("../../models/model_user/home.models");
 
 const home = {
   // Lấy danh sách sản phẩm

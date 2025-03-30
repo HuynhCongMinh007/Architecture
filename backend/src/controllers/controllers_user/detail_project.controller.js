@@ -1,4 +1,4 @@
-const { getInfor } = require("../models/detail_project.models");
+const { getInfor } = require("../../models/model_user/detail_project.models");
 
 const detailController = {
   // Lấy thông tin sản phẩm theo ID

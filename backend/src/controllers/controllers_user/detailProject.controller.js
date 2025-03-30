@@ -1,4 +1,4 @@
-const { getImg } = require("../models/detail.models");
+const { getImg } = require("../../models/model_user/detail.models");
 
 const detailController = {
   // Lấy thông tin ảnh của sản phẩm theo id
