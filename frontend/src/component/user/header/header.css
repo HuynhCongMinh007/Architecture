@@ -5,3 +5,8 @@
     align-items: center;
     padding: 10px 20px;
 }
+.logo {
+    height: auto; /* Điều chỉnh kích thước ảnh */
+    width: 10%;
+  }
+  
