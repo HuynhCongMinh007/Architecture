@@ -22,6 +22,11 @@ function Home() {
       <Link to="/projects" className="project-title">
         Project
       </Link>
+
+      {/* Thêm nút để liên kết đến /admin/dashboard */}
+      <Link to="/admin/dashboard">
+        <button className="admin-dashboard-button">Admin Dashboard</button>
+      </Link>
     </div>
   );
 }
