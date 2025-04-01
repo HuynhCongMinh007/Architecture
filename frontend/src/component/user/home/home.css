@@ -15,10 +15,14 @@
     top:1%;
     right: 1%;
     z-index: 2000;
-    color: white;
+    color: rgb(220, 213, 213)!important; /* Màu chữ */ 
+    text-decoration: none; /* Loại bỏ gạch chân */
+    font-size: 24px; /* Kích thước chữ */
+    font-weight: bold; /* Đậm chữ */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
   }
   .project-title:hover{
-    color:red;
+    color: rgb(207, 20, 20)!important; /* Màu chữ khi hover */
     cursor: pointer;
   }
 
@@ -26,6 +30,13 @@
     position: relative;
     background-size: cover;
     background-position: center;
+  }
+  .cloudinary-image-container.project-titlte{
+    color:black;
+  }
+  
+  .cloudinary-image-container .project-title {
+    color: black;
   }
   
   .image-list {
@@ -46,4 +57,3 @@
   .thumbnail:hover {
     opacity: 1;
   }
-  

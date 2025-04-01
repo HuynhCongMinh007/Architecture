@@ -107,12 +107,29 @@ function Home() {
 
         <div className="col-12 col-sm-12 col-md-6 col-lg-3">
           <h4>{projectDetail?.name_project || "Project Details"}</h4>
-          <p>{projectDetail?.text_english || "Loading..."}</p>
+          <p>
+            {projectDetail?.text_english
+              ? projectDetail.text_english.split("\n").map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))
+              : "Loading..."}
+          </p>
         </div>
 
         <div className="col-12 col-sm-12 col-md-6 col-lg-3">
-          <p>{projectDetail?.text_vn || "Đang tải..."}</p>
-
+          <p>
+            {projectDetail?.text_vn
+              ? projectDetail.text_vn.split("\n").map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))
+              : "Đang tải..."}
+          </p>
         </div>
       </div>
 

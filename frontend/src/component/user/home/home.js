@@ -20,7 +20,7 @@ function Home() {
       }}
     >
       <Link to="/projects" className="project-title">
-        <div className="project-title">Project</div>
+        Project
       </Link>
     </div>
   );
